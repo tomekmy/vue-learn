@@ -16,6 +16,22 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue')
+    },
+    {
+      path: '/counter',
+      name: 'counter',
+      // route level code-splitting
+      // this generates a separate chunk (Counter.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/CounterView.vue')
+    },
+    {
+      path: '/counterPinia',
+      name: 'counterPinia',
+      // route level code-splitting
+      // this generates a separate chunk (CounterPinia.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/CounterPiniaView.vue')
     }
   ]
 })
