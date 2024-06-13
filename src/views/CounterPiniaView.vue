@@ -10,13 +10,9 @@ const counter = useCounterStore()
     <h1>This is an counter Pinia page</h1>
     <h2>{{ counter.count }}</h2>
     <h3>{{ counter.doubleCount }}</h3>
-    <NiceButton @click="counter.increment">
-      <template #text>Add</template>
-    </NiceButton>
+    <NiceButton @click="counter.increment" text="Add" />
     <br />
-    <NiceButton @click="counter.reset">
-      <template #text>Reset</template>
-    </NiceButton>
+    <NiceButton @click="counter.reset" text="Reset" />
   </div>
 </template>
 

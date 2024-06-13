@@ -1,7 +1,13 @@
+<script setup lang="ts">
+defineProps<{
+  text: string
+}>()
+</script>
+
 <template>
   <button>
     <slot name="icon"></slot>
-    <slot name="text"></slot>
+    {{ text }}
   </button>
 </template>
 

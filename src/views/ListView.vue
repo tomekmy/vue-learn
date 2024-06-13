@@ -28,9 +28,7 @@ const removeItem = (index: number) => {
     </ul>
     <div>
       <input type="text" v-model="inputText" />
-      <NiceButton @click="addItem">
-        <template #text>Add</template>
-      </NiceButton>
+      <NiceButton @click="addItem" text="Add" />
     </div>
   </div>
 </template>

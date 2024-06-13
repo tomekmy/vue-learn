@@ -12,13 +12,9 @@ const resetCounter = () => {
   <div class="counter">
     <h1>This is an counter page</h1>
     <h2 :class="[counter > 10 ? 'redColor' : '']">{{ counter }}</h2>
-    <NiceButton @click="counter++">
-      <template #text>Add</template>
-    </NiceButton>
+    <NiceButton @click="counter++" text="Add" />
     <br />
-    <NiceButton @click="resetCounter">
-      <template #text>Reset</template>
-    </NiceButton>
+    <NiceButton @click="resetCounter" text="Remove" />
   </div>
 </template>
 
