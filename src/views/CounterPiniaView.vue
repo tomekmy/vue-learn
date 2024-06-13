@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import NiceButton from '../components/NiceButton.vue'
 import { useCounterStore } from '../stores/counter'
 
 const counter = useCounterStore()
@@ -10,18 +10,17 @@ const counter = useCounterStore()
     <h1>This is an counter Pinia page</h1>
     <h2>{{ counter.count }}</h2>
     <h3>{{ counter.doubleCount }}</h3>
-    <button @click="counter.increment">Add</button>
+    <NiceButton @click="counter.increment">
+      <template #text>Add</template>
+    </NiceButton>
     <br />
-    <button @click="counter.reset">Reset</button>
+    <NiceButton @click="counter.reset">
+      <template #text>Reset</template>
+    </NiceButton>
   </div>
 </template>
 
 <style>
-button {
-  width: 150px;
-  cursor: pointer;
-}
-
 @media (min-width: 1024px) {
   .counter {
     display: grid;

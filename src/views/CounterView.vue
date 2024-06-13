@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import NiceButton from '../components/NiceButton.vue'
 
 const counter = ref(0)
 const resetCounter = () => {
@@ -10,19 +11,21 @@ const resetCounter = () => {
 <template>
   <div class="counter">
     <h1>This is an counter page</h1>
-    <h2>{{ counter }}</h2>
-    <button @click="counter++">Add</button>
+    <h2 :class="[counter > 10 ? 'redColor' : '']">{{ counter }}</h2>
+    <NiceButton @click="counter++">
+      <template #text>Add</template>
+    </NiceButton>
     <br />
-    <button @click="resetCounter">Reset</button>
+    <NiceButton @click="resetCounter">
+      <template #text>Reset</template>
+    </NiceButton>
   </div>
 </template>
 
 <style>
-button {
-  width: 150px;
-  cursor: pointer;
+.redColor {
+  color: red;
 }
-
 @media (min-width: 1024px) {
   .counter {
     display: grid;
