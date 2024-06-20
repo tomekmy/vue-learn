@@ -14,7 +14,7 @@ const resetCounter = () => {
     <h2 :class="[counter > 10 ? 'redColor' : '']">{{ counter }}</h2>
     <NiceButton @click="counter++" text="Add" />
     <br />
-    <v-btn @click="resetCounter" prepend-icon="$vuetify" variant="outlined"> Reset </v-btn>
+    <v-btn @click="resetCounter" prepend-icon="$vuetify" variant="outlined">Reset</v-btn>
   </div>
 </template>
 

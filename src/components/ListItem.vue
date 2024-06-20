@@ -10,7 +10,7 @@ defineProps<{
     <div>
       <slot name="text"></slot>
     </div>
-    <div class="close" @click="() => removeItem(itemIndex)">X</div>
+    <div class="close" @click="removeItem(itemIndex)">X</div>
   </li>
 </template>
 
