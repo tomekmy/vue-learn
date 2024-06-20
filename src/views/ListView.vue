@@ -33,7 +33,7 @@ const removeItem = (index: number) => {
   </div>
 </template>
 
-<style>
+<style scoped>
 .items {
   display: grid;
 }
