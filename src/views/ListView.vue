@@ -5,8 +5,10 @@ import ListItem from '../components/ListItem.vue'
 
 const items = ref(['test1', 'test2', 'test3'])
 const inputText = ref('')
+
 const addItem = () => {
   items.value.push(inputText.value)
+  inputText.value = ''
 }
 
 const removeItem = (index: number) => {
@@ -27,13 +29,13 @@ const removeItem = (index: number) => {
       </ListItem>
     </ul>
     <div>
-      <input type="text" v-model="inputText" />
-      <NiceButton @click="addItem" text="Add" />
+      <v-text-field label="" variant="outlined" v-model="inputText" />
+      <NiceButton @click="addItem" :disabled="!inputText" text="Add" />
     </div>
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .items {
   display: grid;
 }

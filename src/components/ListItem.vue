@@ -21,6 +21,7 @@ defineProps<{
 }
 .close {
   cursor: pointer;
+  justify-self: end;
   &:hover {
     color: red;
   }

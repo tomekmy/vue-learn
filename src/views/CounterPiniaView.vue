@@ -12,13 +12,11 @@ const counter = useCounterStore()
     <h3>{{ counter.doubleCount }}</h3>
     <NiceButton @click="counter.increment" text="Add" />
     <br />
-    <v-btn @click="counter.reset" prepend-icon="$vuetify" variant="outlined">
-      Reset
-    </v-btn>
+    <v-btn @click="counter.reset" prepend-icon="$vuetify" variant="outlined"> Reset </v-btn>
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 @media (min-width: 1024px) {
   .counter {
     display: grid;
