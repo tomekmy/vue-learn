@@ -1,11 +1,28 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watch  } from 'vue'
+import { onUnmounted } from "vue";
 import NiceButton from '../components/NiceButton.vue'
 
 const counter = ref(0)
+
+const counterTimerId = setInterval(() => {
+  counter.value++
+}, 1000);
+
 const resetCounter = () => {
   counter.value = 0
 }
+
+onUnmounted(() => {
+  clearInterval(counterTimerId);
+});
+
+watch(counter, (newValue) => {
+  if (newValue > 10) {
+    console.log('Counter more then 10');
+  }
+})
+
 </script>
 
 <template>
