@@ -1,7 +1,20 @@
 <script setup lang="ts">
+import { watch } from 'vue'
+import { useRoute } from 'vue-router';
+import { useCounterStore } from '../stores/counter'
+
 defineProps<{
   msg: string
 }>()
+
+const counter = useCounterStore()
+
+const route = useRoute();
+
+watch(() => route.name, () => {
+  console.log(`MyCoolComponent - watch route.name changed to ${String(route.name)}`);
+});
+
 </script>
 
 <template>
@@ -12,6 +25,7 @@ defineProps<{
       <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
       <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>. What's next?
     </h3>
+    <h5 v-if="route.name === 'counterPinia'">Welcome to Counter Pinia: {{ counter.count }}</h5>
   </div>
 </template>
 

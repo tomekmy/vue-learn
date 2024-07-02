@@ -5,12 +5,19 @@ import NiceButton from '../components/NiceButton.vue'
 
 const counter = ref(0)
 
+const youAdd = ref(0)
+
 const counterTimerId = setInterval(() => {
   counter.value++
 }, 1000);
 
 const resetCounter = () => {
   counter.value = 0
+}
+
+const emitClick = () => {
+  console.log('emit click');
+  youAdd.value++
 }
 
 onUnmounted(() => {
@@ -29,9 +36,11 @@ watch(counter, (newValue) => {
   <div class="counter">
     <h1>This is an counter page</h1>
     <h2 :class="[counter > 10 ? 'redColor' : '']">{{ counter }}</h2>
-    <NiceButton @click="counter++" text="Add" />
+    <NiceButton @click="counter++" @clickEmit="emitClick" text="Add" />
     <br />
     <v-btn @click="resetCounter" prepend-icon="$vuetify" variant="outlined">Reset</v-btn>
+    <br />
+    You add: {{ youAdd }}
   </div>
 </template>
 

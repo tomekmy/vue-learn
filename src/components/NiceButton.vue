@@ -2,10 +2,11 @@
 defineProps<{
   text: string
 }>()
+defineEmits(['clickEmit'])
 </script>
 
 <template>
-  <button>
+  <button @click="$emit('clickEmit')">
     <slot name="icon"></slot>
     {{ text }}
   </button>
